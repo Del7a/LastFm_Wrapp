@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/philip/AndroidStudioProjects/LastFmWrapper/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/home/philip/AndroidStudioProjects/LastFmWrapper/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_003875d6a2126b59c67d928cca2391aa66952189/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/philip/AndroidStudioProjects/LastFmWrapper/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="49a5c2083170853387c4febbfe54e42e41a78992">
+        <dex dex="/home/philip/AndroidStudioProjects/LastFmWrapper/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_c1717d96137a2b0844c97cb34cb91db826e20700/classes.dex" />
+    </item>
+
+</items>
