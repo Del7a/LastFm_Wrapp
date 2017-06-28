@@ -1,2 +1,2 @@
 # LastFm_Wrapp
-Test project
+Course project for FMI android course
