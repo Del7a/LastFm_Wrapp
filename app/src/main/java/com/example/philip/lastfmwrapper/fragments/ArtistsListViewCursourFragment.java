@@ -96,6 +96,7 @@ public class ArtistsListViewCursourFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        //TODO: Quick fix before presentation. Make a proper null check!
         try {
             ViewGroup container = (ViewGroup) getView().getParent();
             ContentResolver cr = container.getContext().getContentResolver();

@@ -5,7 +5,7 @@ package com.example.philip.lastfmwrapper;
  */
 
 public interface IFragmentInteraction {
-    public interface OnFragmentInteractionListener {
+    interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(String name, String imageUrl, String mbid, String plays, String listeners);
     }

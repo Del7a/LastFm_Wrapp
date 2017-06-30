@@ -58,7 +58,7 @@ public class TracksListViewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View cView = inflater.inflate(R.layout.fragment_tracks_list_view, container, false);;
+        View cView = inflater.inflate(R.layout.fragment_tracks_list_view, container, false);
         ArrayList<Track> trList = new ArrayList<Track>();
         listAdapter = new ChartTrackAdapter(getActivity().getBaseContext(), trList);
         final ListView trackListView = (ListView) cView.findViewById(R.id.fragmentTracksListView);
