@@ -13,11 +13,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.philip.lastfmwrapper.models.Artist;
 import com.example.philip.lastfmwrapper.R;
 import com.example.philip.lastfmwrapper.httpRequester.Requester;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -33,9 +31,6 @@ public class ChartArtistAdapter extends ArrayAdapter<Artist>{
     private final String TAG = "ChartArtistAdapter";
     private static String TAGs = "ChartArtistAdapter";
 
-    private ImageView _artistPicture;
-    private  ViewGroup _parent;
-
     public ChartArtistAdapter(Context context, ArrayList<Artist> resource) {
         super(context, R.layout.artist_row, resource);
     }
@@ -43,8 +38,6 @@ public class ChartArtistAdapter extends ArrayAdapter<Artist>{
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        _parent = parent;
-
         LayoutInflater inflater = LayoutInflater.from(getContext());
         View artistChartView = inflater.inflate(R.layout.artist_row, parent, false);
 
@@ -57,7 +50,6 @@ public class ChartArtistAdapter extends ArrayAdapter<Artist>{
             TextView artistPlaysMainText = (TextView) artistChartView.findViewById(R.id.artistPlaysMainText);
             TextView artistListenersMainText = (TextView) artistChartView.findViewById(R.id.artistListenersMainText);
             ImageView artistPicture = (ImageView)  artistChartView.findViewById(R.id.artistImage);
-            _artistPicture = artistPicture;
 
             artistName.setText(cArt.artistName);
             artistPlays.setText(cArt.playcount);
@@ -81,23 +73,23 @@ public class ChartArtistAdapter extends ArrayAdapter<Artist>{
     class RetrieveImageTask extends AsyncTask<ImageView, Void, Bitmap> {
 
         String imageTag;
-        ImageView imageView = _artistPicture;
+        ImageView imageView = null;
         @Override
         protected void onPreExecute() {
             imageTag = (String) imageView.getTag();
             imageView.setAlpha(0f);
         }
 
-        protected Bitmap doInBackground(ImageView... urls) {
-            imageView = urls[0];
+        protected Bitmap doInBackground(ImageView... pirctureViews) {
+            imageView = pirctureViews[0];
             Bitmap result = null;
             String fileName = imageTag.substring(imageTag.lastIndexOf('/') + 1);
             //String baseDir = "mnt/sdcard/fmWrap";
             String imageNetworkUrl = imageTag;
             //String fullPath = baseDir + '/' + fileName;
             //File picDirectory = new File(baseDir, fileName);
-            result = loadBitmap(getContext(),fileName);
-            if (result!=null) {
+            result = loadBitmap(getContext(), fileName);
+            if (result != null) {
                 return result;
             }
                 Bitmap bm = new Requester().getBitmapFromURL(imageNetworkUrl);
